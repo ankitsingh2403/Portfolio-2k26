@@ -48,15 +48,15 @@ export default function WorkGrid({ filter }: { filter: string }) {
             }}
           >
 
-            {/* IMAGE */}
-            <div className="relative aspect-[16/10] overflow-hidden rounded-lg">
+            {/* IMAGE CARD */}
+            <div className="relative aspect-[16/10] overflow-hidden rounded-lg bg-neutral-100">
 
               <Image
                 src={project.previewImage}
                 alt={project.title}
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-cover transition duration-700 group-hover:scale-105"
+                className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
               />
 
               {/* CURSOR FOLLOW VIEW (DESKTOP ONLY) */}
@@ -67,7 +67,7 @@ export default function WorkGrid({ filter }: { filter: string }) {
                   top: cursor.y - 50,
                 }}
               >
-                <div className="w-20 h-20 lg:w-24 lg:h-24 rounded-full bg-blue-600 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition text-sm lg:text-base">
+                <div className="w-20 h-20 lg:w-24 lg:h-24 rounded-full bg-blue-600 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition text-sm lg:text-base shadow-lg">
                   View
                 </div>
               </div>
