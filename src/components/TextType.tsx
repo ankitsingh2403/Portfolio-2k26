@@ -7,11 +7,12 @@ import {
   useMemo,
   useCallback,
   useRef,
+  ElementType,
 } from "react";
 
 interface TextTypeProps {
   text: string[];
-  as?: keyof JSX.IntrinsicElements;
+  as?: ElementType;
   typingSpeed?: number;
   deletingSpeed?: number;
   pauseDuration?: number;
@@ -34,8 +35,7 @@ const TextType: React.FC<TextTypeProps> = ({
   cursorCharacter = "|",
   variableSpeed,
 }) => {
-  // ✅ ref type fixed
-  const containerRef = useRef<HTMLElement>(null);
+  const containerRef = useRef<HTMLElement | null>(null);
   const [isInView, setIsInView] = useState(false);
 
   const [displayedText, setDisplayedText] = useState("");
@@ -45,7 +45,6 @@ const TextType: React.FC<TextTypeProps> = ({
 
   const textArray = useMemo(() => text, [text]);
 
-  // Lazy load observer
   useEffect(() => {
     if (!containerRef.current) return;
 
@@ -69,7 +68,6 @@ const TextType: React.FC<TextTypeProps> = ({
     return Math.random() * (max - min) + min;
   }, [variableSpeed, typingSpeed]);
 
-  // Typing logic (unchanged)
   useEffect(() => {
     if (!isInView) return;
 
@@ -117,7 +115,7 @@ const TextType: React.FC<TextTypeProps> = ({
   return createElement(
     Component,
     {
-      ref: containerRef as any, // ✅ SAFE CAST (standard solution)
+      ref: containerRef,
       className: `
         inline-block
         select-none

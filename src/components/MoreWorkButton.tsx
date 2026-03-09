@@ -40,12 +40,17 @@ export default function MoreWorkButton({ count }: Props) {
   useEffect(() => {
     if (hovered) {
       waveControls.start({
+        opacity: 1,
         d: [
           "M0 20 Q40 10 80 20 T160 20 V40 H0 Z",
           "M0 22 Q40 14 80 22 T160 22 V40 H0 Z",
           "M0 20 Q40 10 80 20 T160 20 V40 H0 Z",
         ],
         transition: { duration: 2, repeat: Infinity, ease: "easeInOut" },
+      });
+    } else {
+      waveControls.start({
+        opacity: 0,
       });
     }
   }, [hovered, waveControls]);
@@ -75,7 +80,7 @@ export default function MoreWorkButton({ count }: Props) {
         font-medium
       "
     >
-      {/* 🔵 Blue liquid fill */}
+      {/* Blue liquid fill */}
       <motion.div
         className="absolute inset-0 bg-[#5B7FFF]"
         initial={{ y: "100%" }}
@@ -83,7 +88,7 @@ export default function MoreWorkButton({ count }: Props) {
         transition={{ duration: 0.45, ease: "easeOut" }}
       />
 
-      {/* 🌊 Wave */}
+      {/* Wave */}
       <motion.svg
         className="absolute bottom-0 left-0 w-full h-full"
         viewBox="0 0 160 40"
@@ -92,7 +97,6 @@ export default function MoreWorkButton({ count }: Props) {
         <motion.path
           fill="#5B7FFF"
           initial={{ opacity: 0 }}
-          animate={{ opacity: hovered ? 1 : 0 }}
           animate={waveControls}
         />
       </motion.svg>

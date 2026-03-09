@@ -41,10 +41,10 @@ const ScrollingName: React.FC<ScrollingNameProps> = ({
       lastTime.current = time;
 
       setOffset((prev) => {
-        // ✅ time-based speed (never zero)
+        // time-based speed (never zero)
         const baseSpeed = 0.08 * deltaTime;
 
-        let next = prev + baseSpeed + velocity.current;
+        const next = prev + baseSpeed + velocity.current;
 
         // wrap
         if (next > 1200) return -1200;
