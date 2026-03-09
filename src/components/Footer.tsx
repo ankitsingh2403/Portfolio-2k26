@@ -103,7 +103,7 @@ export default function Footer() {
           <div className="flex gap-6">
 
             <Link
-              href="https://instagram.com"
+              href="https://www.instagram.com/_ankit.singh.rajput__?igsh=N29wdWdkNDl6cTZ2"
               target="_blank"
               className="hover:text-white transition"
             >
@@ -111,7 +111,7 @@ export default function Footer() {
             </Link>
 
             <Link
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/ankit-singh-hbtu/"
               target="_blank"
               className="hover:text-white transition"
             >
@@ -119,7 +119,7 @@ export default function Footer() {
             </Link>
 
             <Link
-              href="https://twitter.com"
+              href="https://github.com/ankitsingh2403"
               target="_blank"
               className="hover:text-white transition"
             >

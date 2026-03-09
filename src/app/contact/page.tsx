@@ -46,7 +46,6 @@ export default function ContactPage() {
         services: "",
         message: "",
       });
-
     } catch (error) {
       toast.error("Something went wrong ⚠️");
     }
@@ -60,24 +59,41 @@ export default function ContactPage() {
         pt-36 md:pt-44 pb-32"
       >
         <div className="grid md:grid-cols-[65%_35%] gap-20 lg:gap-28">
+
           {/* LEFT SIDE */}
-          <div className="relative">
-            {/* PROFILE IMAGE */}
-            <div className="absolute top-10 right-0 md:right-12 lg:right-20">
+          <div>
+
+            {/* HEADING + PROFILE */}
+            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-12 mb-16 md:mb-20">
+
+              {/* HEADING */}
+              <h1
+                className="
+                text-[42px] sm:text-[56px] md:text-[72px] lg:text-[90px]
+                leading-[1.05]
+                font-light
+                tracking-tight
+              "
+              >
+                Let's start a <br /> project together
+              </h1>
+
+              {/* PROFILE IMAGE */}
               <div
                 className="
-      relative
-      w-32 h-32
-      sm:w-36 sm:h-36
-      md:w-44 md:h-44
-      lg:w-52 lg:h-52
-      rounded-full
-      overflow-hidden
-      border-2 border-white/10
-      shadow-[0_0_40px_rgba(0,0,0,0.5)]
-      transition-transform duration-500
-      hover:scale-105
-    "
+                relative
+                w-32 h-32
+                sm:w-36 sm:h-36
+                md:w-44 md:h-44
+                lg:w-52 lg:h-52
+                rounded-full
+                overflow-hidden
+                border-2 border-white/10
+                shadow-[0_0_40px_rgba(0,0,0,0.5)]
+                transition-transform duration-500
+                hover:scale-105
+                flex-shrink-0
+              "
               >
                 <Image
                   src="/professional.png"
@@ -85,23 +101,9 @@ export default function ContactPage() {
                   fill
                   sizes="(max-width:768px) 144px, 208px"
                   className="object-cover"
-                  priority={false}
                 />
               </div>
             </div>
-
-            {/* HEADING */}
-            <h1
-              className="
-              text-[42px] sm:text-[56px] md:text-[72px] lg:text-[90px]
-              leading-[1.05]
-              font-light
-              tracking-tight
-              mb-16 md:mb-20
-            "
-            >
-              Let's start a <br /> project together
-            </h1>
 
             {/* Divider */}
             <div className="w-full h-[1px] bg-gradient-to-r from-gray-700 via-gray-500 to-transparent mb-16"></div>
@@ -205,7 +207,7 @@ export default function ContactPage() {
             </div>
           </div>
 
-          {/* RIGHT SIDE */}
+          {/* RIGHT SIDE (UNCHANGED) */}
           <div className="space-y-14 pt-12 md:pt-28">
             <div>
               <p className="text-gray-500 uppercase text-xs tracking-widest mb-3">
@@ -264,6 +266,7 @@ export default function ContactPage() {
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </ProjectIntroOverlay>
