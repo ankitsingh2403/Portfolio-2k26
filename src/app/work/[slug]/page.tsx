@@ -3,7 +3,7 @@ import dynamic from "next/dynamic";
 import ProjectIntroLayout from "@/components/ProjectIntroOverlay";
 import Footer from "@/components/Footer";
 
-// ✅ Server-safe dynamic imports (NO ssr:false)
+// Server-safe dynamic imports
 const ProjectHero = dynamic(() => import("@/components/ProjectHero"), {
   loading: () => <SkeletonSection />,
 });
@@ -13,13 +13,15 @@ const LaptopMockup = dynamic(() => import("@/components/LaptopMockup"), {
 });
 
 type PageProps = {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 };
 
-export default function Page({ params }: PageProps) {
-  const project = projects.find((p) => p.slug === params.slug);
+export default async function Page({ params }: PageProps) {
+  const { slug } = await params;
+
+  const project = projects.find((p) => p.slug === slug);
 
   if (!project) {
     return (
@@ -38,6 +40,7 @@ export default function Page({ params }: PageProps) {
           <LaptopMockup video={project.video} />
         </div>
       )}
+
       <Footer />
     </ProjectIntroLayout>
   );
