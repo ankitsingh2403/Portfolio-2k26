@@ -11,7 +11,7 @@ import { useRef } from "react";
 import LiquidButton from "../components/LiquidButton";
 import Link from "next/link";
 
-export default function BriefInfoSection(): JSX.Element {
+export default function BriefInfoSection() {
   const ref = useRef<HTMLElement | null>(null);
 
   const isInView = useInView(ref, { once: true, margin: "-100px" });
