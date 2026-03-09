@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
   description: "Portfolio of Ankit Kumar Singh",
   icons: {
-    icon: "/professional.png",
+    icon: "/favicon.png",
   },
 };
 
