@@ -49,17 +49,17 @@ export default function WorkGrid({ filter }: { filter: string }) {
           >
 
             {/* IMAGE CARD */}
-            <div className="relative aspect-[16/10] overflow-hidden rounded-lg bg-neutral-100">
+            <div className="relative aspect-[16/10] overflow-hidden rounded-lg bg-neutral-100 flex items-center justify-center">
 
               <Image
                 src={project.previewImage}
                 alt={project.title}
-                fill
-                sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                width={1200}
+                height={800}
+                className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
               />
 
-              {/* CURSOR FOLLOW VIEW (DESKTOP ONLY) */}
+              {/* CURSOR FOLLOW VIEW */}
               <div
                 className="absolute pointer-events-none hidden md:block"
                 style={{
@@ -88,7 +88,6 @@ export default function WorkGrid({ filter }: { filter: string }) {
       {/* PAGINATION */}
       <div className="flex justify-center items-center gap-6 sm:gap-8 mt-16 sm:mt-20 lg:mt-24">
 
-        {/* PREVIOUS */}
         <button
           onClick={() => setPage((p) => Math.max(p - 1, 1))}
           className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 rounded-full border border-black flex items-center justify-center hover:bg-black hover:text-white transition"
@@ -96,12 +95,10 @@ export default function WorkGrid({ filter }: { filter: string }) {
           <ChevronLeft size={20} />
         </button>
 
-        {/* PAGE COUNT */}
         <span className="text-xs sm:text-sm tracking-widest text-black">
           {page} / {totalPages}
         </span>
 
-        {/* NEXT */}
         <button
           onClick={() => setPage((p) => Math.min(p + 1, totalPages))}
           className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 rounded-full border border-black flex items-center justify-center hover:bg-black hover:text-white transition"
