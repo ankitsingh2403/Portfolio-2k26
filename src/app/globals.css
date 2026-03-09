@@ -1,20 +1,24 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-/* Font Imports */
+/* ================= Font Imports (must be first) ================= */
 @import "@fontsource/inter/300.css";
 @import "@fontsource/inter/400.css";
 @import "@fontsource/inter/500.css";
 @import "@fontsource-variable/inter/index.css";
 
-/* ============================== Root Variables ============================== */
+/* ================= Tailwind ================= */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ================= Root Variables ================= */
 :root {
   --background: #999999;
   /* Matches navbar + Dennis style */
   --foreground: #ffffff;
   --hover: #d1d1d1;
 }
-html, body {
+
+html,
+body {
   overflow-x: hidden;
 }
 
@@ -26,7 +30,7 @@ html, body {
   }
 }
 
-/* ============================== Global Styles ============================== */
+/* ================= Global Styles ================= */
 html {
   scroll-behavior: smooth;
 }
@@ -43,7 +47,7 @@ body {
   transition: background-color 0.5s ease, color 0.5s ease;
 }
 
-/* ============================== Utilities Layer ============================== */
+/* ================= Utilities Layer ================= */
 @layer utilities {
   .animate-blink {
     animation: blink 1s step-start infinite;
@@ -56,7 +60,7 @@ body {
   }
 }
 
-/* Responsive content container */
+/* ================= Responsive container ================= */
 .container-responsive {
   width: 100%;
   margin-inline: auto;
@@ -82,11 +86,11 @@ body {
   }
 }
 
+/* ================= Animations ================= */
 @keyframes spinSlow {
   from {
     transform: rotate(0deg);
   }
-
   to {
     transform: rotate(360deg);
   }
@@ -96,100 +100,7 @@ body {
   animation: spinSlow 14s linear infinite;
 }
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-/* Font Imports */
-@import "@fontsource/inter/300.css";
-@import "@fontsource/inter/400.css";
-@import "@fontsource/inter/500.css";
-@import "@fontsource-variable/inter/index.css";
-
-/* ============================== Root Variables ============================== */
-:root {
-  --background: #999999;
-  /* Matches navbar + Dennis style */
-  --foreground: #ffffff;
-  --hover: #d1d1d1;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-    --hover: #d1d1d1;
-  }
-}
-
-/* ============================== Global Styles ============================== */
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  background-color: var(--background);
-  color: var(--foreground);
-  font-family: "Inter Variable", "Inter", system-ui, sans-serif;
-  font-weight: 300;
-  letter-spacing: 0.3px;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-  transition: background-color 0.5s ease, color 0.5s ease;
-}
-
-/* ============================== Utilities Layer ============================== */
-@layer utilities {
-  .animate-blink {
-    animation: blink 1s step-start infinite;
-  }
-
-  @keyframes blink {
-    50% {
-      opacity: 0;
-    }
-  }
-}
-
-/* Responsive content container */
-.container-responsive {
-  width: 100%;
-  margin-inline: auto;
-  padding-inline: 1rem;
-}
-
-@media (min-width: 640px) {
-  .container-responsive {
-    padding-inline: 1.5rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .container-responsive {
-    max-width: 1400px;
-    padding-inline: 2rem;
-  }
-}
-
-@media (min-width: 1536px) {
-  .container-responsive {
-    max-width: 1600px;
-  }
-}
-
-@keyframes spinSlow {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.animate-spin-slow {
-  animation: spinSlow 14s linear infinite;
-}
+/* ================= Global Reset ================= */
 * {
   -webkit-font-smoothing: antialiased;
   scroll-behavior: smooth;
