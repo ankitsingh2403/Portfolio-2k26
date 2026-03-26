@@ -18,15 +18,18 @@ export const metadata: Metadata = {
     default: "Ankit Kumar Singh",
     template: "%s | Ankit Kumar Singh",
   },
-  description: "Ankit Kumar Singh is a Full Stack Developer skilled in React, Next.js, Node.js. Explore projects, experience and contact details.",
+  description:
+    "Ankit Kumar Singh is a Full Stack Developer skilled in React, Next.js, Node.js.",
 
-  //  Google verification add here
   verification: {
     google: "MkwTKtna9t6-d4SGtduVEeoivDcVnzk38mCScZtllsY",
   },
 
   icons: {
-    icon: "/favicon.png",
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/favicon.png", type: "image/png" },
+    ],
   },
 };
 
