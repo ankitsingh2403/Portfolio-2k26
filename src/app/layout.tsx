@@ -19,6 +19,12 @@ export const metadata: Metadata = {
     template: "%s | Ankit Kumar Singh",
   },
   description: "Portfolio of Ankit Kumar Singh",
+
+  //  Google verification add here
+  verification: {
+    google: "MkwTKtna9t6-d4SGtduVEeoivDcVnzk38mCScZtllsY",
+  },
+
   icons: {
     icon: "/favicon.png",
   },
