@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     default: "Ankit Kumar Singh",
     template: "%s | Ankit Kumar Singh",
   },
-  description: "Portfolio of Ankit Kumar Singh",
+  description: "Ankit Kumar Singh is a Full Stack Developer skilled in React, Next.js, Node.js. Explore projects, experience and contact details.",
 
   //  Google verification add here
   verification: {

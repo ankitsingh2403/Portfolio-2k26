@@ -37,7 +37,7 @@ export default function Footer() {
 
               {/* PROFILE IMAGE */}
               <img
-                src="/professional.png"
+                src="/favicon.png"
                 alt="Profile"
                 className="
                   w-24 h-24

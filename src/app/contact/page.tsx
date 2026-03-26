@@ -96,7 +96,7 @@ export default function ContactPage() {
               "
               >
                 <Image
-                  src="/professional.png"
+                  src="/favicon.png"
                   alt="Ankit Kumar Singh"
                   fill
                   sizes="(max-width:768px) 144px, 208px"

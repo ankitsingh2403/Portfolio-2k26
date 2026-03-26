@@ -70,7 +70,7 @@ export default function About() {
 
 
           <motion.img
-            src="/professional.png"
+            src="/favicon.png"
             loading="lazy"
             alt="about"
             initial={{ opacity: 0, scale: 0.95 }}
