@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Ankit Kumar Singh",
+    default: "Ankit Kumar Singh – Full Stack Developer | Portfolio",
     template: "%s | Ankit Kumar Singh",
   },
   description:
